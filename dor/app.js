@@ -505,8 +505,8 @@ bot.command("lanjutdor", async (msg) => {
         nama_paket: "Paket Kere Hore",
         nomor_hp: nomor_hp,
         payment: "pulsa",
-        id_telegram: "6691212410",
-        password: "tuyulbot",
+        id_telegram: "6691212410", //GANTI ID TELEGRAM ANDA
+        password: "tuyulbot", //GANTI PASSWORD AKSES ANDA
         access_token: access_token
     };
 
