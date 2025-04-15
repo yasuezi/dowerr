@@ -16,7 +16,7 @@
   "author": "AutoFtBot",
   "license": "MIT",
   "dependencies": {
-    "@mengkodingan/ckptw": "^1.5.3",
+    "@mengkodingan/ckptw": "^4.4.9",
     "axios": "^1.6.8",
     "qrcode": "^1.5.3"
   }
