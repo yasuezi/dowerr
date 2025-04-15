@@ -1,0 +1,23 @@
+{
+  "name": "dor-whatsapp-bot",
+  "version": "1.0.0",
+  "description": "WhatsApp bot using ckptw, axios, and qrcode",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "whatsapp",
+    "bot",
+    "ckptw",
+    "qrcode",
+    "axios"
+  ],
+  "author": "AutoFtBot",
+  "license": "MIT",
+  "dependencies": {
+    "@mengkodingan/ckptw": "^1.5.3",
+    "axios": "^1.6.8",
+    "qrcode": "^1.5.3"
+  }
+}
