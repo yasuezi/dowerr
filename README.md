@@ -55,7 +55,7 @@ npm install
 
 ### Configuration
 
-Update the following configuration in `dor/finish.js`:
+Update the following configuration in `dor/app.js`:
 
 ```javascript
 const DOR_CONFIG = {
