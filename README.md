@@ -136,10 +136,11 @@ pm2 save
 ```
 DorXLHORE/
 ├── dor/
-│   ├── app.js         # Main bot implementation
-│   ├── bot.log          # Log file
-│   └── otp_data.json    # OTP data storage
-└── README.md           # Documentation
+│   ├── app.js            # Main bot implementation
+│   ├── bot.log           # Log file
+│   ├── otp_data.json     # OTP data storage
+│   └── orderkuota.js     # OrderKuota payment integration
+└── README.md             # Documentation
 ```
 
 ## 📦 Dependencies
