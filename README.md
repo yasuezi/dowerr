@@ -44,7 +44,7 @@ A powerful WhatsApp bot built with Node.js for handling XL DOR (Data Override) s
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/DorXLHORE.git
+git clone https://github.com/AutoFTbot/DorXLHORE.git
 cd DorXLHORE 
 ```
 
