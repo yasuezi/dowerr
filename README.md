@@ -39,6 +39,7 @@ A powerful WhatsApp bot built with Node.js for handling XL DOR (Data Override) s
 - API keys for:
   - DOR Service API
   - Tripay Payment Gateway
+  - OrderKuota Payment Gateway (bebas mau pake ini atau tripay)
 
 ### Installation
 
