@@ -1,32 +1,27 @@
 #!/bin/bash
 
-echo "🛠️  Mulai instalasi proyek..."
+echo "🛠️  Memulai instalasi proyek dari nol..."
 
-if ! command -v node &> /dev/null || ! command -v npm &> /dev/null; then
-    echo "❌ Node.js dan npm belum terinstall. Menginstal Node.js..."
-    NODE_VERSION="20.19.0"
-    echo "📥 Mengunduh dan menginstal Node.js versi $NODE_VERSION..."
-    curl -sL https://deb.nodesource.com/setup_$NODE_VERSION | sudo -E bash -
-    sudo apt-get install -y nodejs
-    if ! command -v node &> /dev/null || ! command -v npm &> /dev/null; then
-        echo "❌ Gagal menginstal Node.js dan npm. Pastikan Anda memiliki akses sudo."
-        exit 1
-    fi
-    echo "✅ Node.js dan npm berhasil diinstal."
-else
-    echo "✅ Node.js dan npm sudah terinstall."
-fi
+echo "🔄 Update sistem & install curl, wget..."
+sudo apt-get update -y
+sudo apt-get install -y curl wget gnupg ca-certificates lsb-release
 
-echo "📦 Menginstall dependency..."
+echo "📦 Menginstall Node.js v20.x..."
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+echo "📌 Versi Node.js: $(node -v)"
+echo "📌 Versi npm: $(npm -v)"
+
+echo "📦 Menjalankan npm install..."
 npm install
 
 if [ ! -f .env ]; then
-    echo "⚠️  File .env belum ditemukan! Membuat file .env..."
+    echo "⚠️  File .env belum ditemukan! Membuat dari .env.example..."
     cp .env.example .env
 fi
 
-echo "🔧 Mengisi data .env..."
-
+echo "📝 Silakan isi konfigurasi .env"
 read -p "Masukkan ADMIN_ID (contoh: 123456): " ADMIN_ID
 read -p "Masukkan LOGGING_GROUP_ID (contoh: -987654321): " LOGGING_GROUP_ID
 read -p "Masukkan QRIS_MERCHANT_ID: " QRIS_MERCHANT_ID
@@ -37,17 +32,19 @@ read -p "Masukkan BOT_TOKEN: " BOT_TOKEN
 read -p "Masukkan ID_TELEGRAM: " ID_TELEGRAM
 read -p "Masukkan PASSWORD: " PASSWORD
 
-echo "ADMIN_ID=$ADMIN_ID" > .env
-echo "LOGGING_GROUP_ID=$LOGGING_GROUP_ID" >> .env
-echo "QRIS_MERCHANT_ID=$QRIS_MERCHANT_ID" >> .env
-echo "QRIS_API_KEY=$QRIS_API_KEY" >> .env
-echo "QRIS_BASE_QR_STRING=$QRIS_BASE_QR_STRING" >> .env
-echo "DOR_API_KEY=$DOR_API_KEY" >> .env
-echo "BOT_TOKEN=$BOT_TOKEN" >> .env
-echo "ID_TELEGRAM=$ID_TELEGRAM" >> .env
-echo "PASSWORD=$PASSWORD" >> .env
+cat > .env <<EOF
+ADMIN_ID=$ADMIN_ID
+LOGGING_GROUP_ID=$LOGGING_GROUP_ID
+QRIS_MERCHANT_ID=$QRIS_MERCHANT_ID
+QRIS_API_KEY=$QRIS_API_KEY
+QRIS_BASE_QR_STRING=$QRIS_BASE_QR_STRING
+DOR_API_KEY=$DOR_API_KEY
+BOT_TOKEN=$BOT_TOKEN
+ID_TELEGRAM=$ID_TELEGRAM
+PASSWORD=$PASSWORD
+EOF
 
-echo "✅ File .env berhasil diisi."
+echo "✅ File .env berhasil dibuat dan diisi."
 
-echo "🚀 Menjalankan bot..."
+echo "🚀 Menjalankan aplikasi..."
 npm start
