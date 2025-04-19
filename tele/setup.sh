@@ -1,39 +1,47 @@
 #!/bin/bash
 
-echo "🛠️  Memulai instalasi proyek dari nol..."
+# Warna
+GREEN="\033[0;32m"
+CYAN="\033[0;36m"
+YELLOW="\033[1;33m"
+RED="\033[0;31m"
+RESET="\033[0m"
 
-echo "🔄 Update sistem & install curl, wget..."
+echo -e "${CYAN}🛠️  Memulai setup untuk bot lo...${RESET}"
+
+echo -e "${YELLOW}🔄 Update sistem & install tools penting...${RESET}"
 sudo apt-get update -y
 sudo apt-get install -y curl wget gnupg ca-certificates lsb-release
 
-echo "🕒 Mengatur zona waktu ke Asia/Jakarta (WIB)..."
+echo -e "${YELLOW}🕒 Setting timezone ke WIB (Asia/Jakarta)...${RESET}"
 sudo timedatectl set-timezone Asia/Jakarta
 
-echo "📦 Menginstall Node.js v20.x..."
+echo -e "${YELLOW}📦 Install Node.js v20.x, sabar ya...${RESET}"
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
-echo "📌 Versi Node.js: $(node -v)"
-echo "📌 Versi npm: $(npm -v)"
+echo -e "${GREEN}✅ Node.js version: $(node -v)${RESET}"
+echo -e "${GREEN}✅ npm version: $(npm -v)${RESET}"
 
-echo "📦 Menjalankan npm install..."
+echo -e "${YELLOW}📁 Install dependencies dari package.json...${RESET}"
 npm install
 
+# Check .env
 if [ ! -f .env ]; then
-    echo "⚠️  File .env belum ditemukan! Membuat dari .env.example..."
+    echo -e "${YELLOW}⚠️  File .env gak ada, bikin dari .env.example...${RESET}"
     cp .env.example .env
 fi
 
-echo "📝 Silakan isi konfigurasi .env"
-read -p "Masukkan ADMIN_ID (contoh: 123456): " ADMIN_ID
-read -p "Masukkan LOGGING_GROUP_ID (contoh: -987654321): " LOGGING_GROUP_ID
-read -p "Masukkan QRIS_MERCHANT_ID: " QRIS_MERCHANT_ID
-read -p "Masukkan QRIS_API_KEY: " QRIS_API_KEY
-read -p "Masukkan QRIS_BASE_QR_STRING: " QRIS_BASE_QR_STRING
-read -p "Masukkan DOR_API_KEY: " DOR_API_KEY
-read -p "Masukkan BOT_TOKEN: " BOT_TOKEN
-read -p "Masukkan ID_TELEGRAM: " ID_TELEGRAM
-read -p "Masukkan PASSWORD: " PASSWORD
+echo -e "${CYAN}📝 Masukkan konfigurasi penting buat bot kamu${RESET}"
+read -p "👤 ADMIN_ID: " ADMIN_ID
+read -p "📢 LOGGING_GROUP_ID: " LOGGING_GROUP_ID
+read -p "💳 QRIS_MERCHANT_ID: " QRIS_MERCHANT_ID
+read -p "🔑 QRIS_API_KEY: " QRIS_API_KEY
+read -p "📌 QRIS_BASE_QR_STRING: " QRIS_BASE_QR_STRING
+read -p "🚪 DOR_API_KEY: " DOR_API_KEY
+read -p "🤖 BOT_TOKEN: " BOT_TOKEN
+read -p "👥 ID_TELEGRAM UNTUK API: " ID_TELEGRAM
+read -p "🔐 PASSWORD: " PASSWORD
 
 cat > .env <<EOF
 ADMIN_ID=$ADMIN_ID
@@ -47,15 +55,22 @@ ID_TELEGRAM=$ID_TELEGRAM
 PASSWORD=$PASSWORD
 EOF
 
-echo "✅ File .env berhasil dibuat dan diisi."
+echo -e "${GREEN}✅ .env berhasil dibuat dan diisi lengkap!${RESET}"
 
-echo "🚀 Menjalankan aplikasi..."
-echo "Coba /start di bot telegram"
-echo "kalo dah jalan ctrl+c untuk exit"
-echo "terus install pm2 untuk service"
-echo "npm install -g pm2"
-echo "pm2 start app.js name bot"
-echo "pm2 startup  "
-echo "pm2 save"
-echo "selesai"
-npm start
+echo -e "${YELLOW}🔥 Install PM2 buat ngejalanin bot 24/7...${RESET}"
+sudo npm install -g pm2
+
+echo -e "${CYAN}🚀 Menyalakan bot dengan PM2...${RESET}"
+pm2 start app.js --name bot-keren
+pm2 startup systemd -u $USER --hp $HOME
+pm2 save
+
+echo -e "${GREEN}✅ Bot lo udah jalan dan akan auto-nyala kalau VPS reboot!${RESET}"
+
+echo -e "${CYAN}📦 Perintah berguna buat bot lo:${RESET}"
+echo -e "${YELLOW}➡️ pm2 logs bot-keren        ${CYAN}# Lihat log${RESET}"
+echo -e "${YELLOW}➡️ pm2 restart bot-keren     ${CYAN}# Restart bot${RESET}"
+echo -e "${YELLOW}➡️ pm2 stop bot-keren        ${CYAN}# Stop bot${RESET}"
+echo -e "${YELLOW}➡️ pm2 delete bot-keren      ${CYAN}# Hapus bot dari PM2${RESET}"
+
+echo -e "${GREEN}✨ SEMUA BERES! Sekarang tinggal buka Telegram & coba /start 💬${RESET}"
