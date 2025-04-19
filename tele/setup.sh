@@ -6,6 +6,9 @@ echo "🔄 Update sistem & install curl, wget..."
 sudo apt-get update -y
 sudo apt-get install -y curl wget gnupg ca-certificates lsb-release
 
+echo "🕒 Mengatur zona waktu ke Asia/Jakarta (WIB)..."
+sudo timedatectl set-timezone Asia/Jakarta
+
 echo "📦 Menginstall Node.js v20.x..."
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 sudo apt-get install -y nodejs
