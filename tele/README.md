@@ -13,26 +13,40 @@ DorXLHORE adalah sebuah bot Telegram yang dirancang untuk memfasilitasi proses v
 
 ## Instalasi
 
-1. **Clone repositori ini**:
-   ```bash
-   git clone https://github.com/AutoFTbot/DorXLHORE.git
-   cd DorXLHORE/tele
-   ```
+<details>
+  <summary>Instalasi Otomatis</summary>
 
-2. **Instalasi dependensi**:
-   Pastikan Anda memiliki Node.js dan npm terinstal. Kemudian jalankan:
-   ```bash
-   npm install
-   ```
+  Skrip ini akan menginstal Node.js (jika belum terinstal), menginstal dependensi, dan mengatur file `.env`.
+  
+  ```bash
+  ./setup.sh
+  ```
+</details>
 
-3. **Konfigurasi**:
-   Salin file `.env.example` menjadi `.env` dan isi dengan informasi yang diperlukan seperti `BOT_TOKEN`, `ADMIN_ID`, `LOGGING_GROUP_ID`, dll.
+<details>
+  <summary>Instalasi Manual</summary>
 
-4. **Menjalankan Bot**:
-   Jalankan perintah berikut untuk memulai bot:
-   ```bash
-   node app.js
-   ```
+  1. **Clone repositori ini**:
+     ```bash
+     git clone https://github.com/AutoFTbot/DorXLHORE.git
+     cd DorXLHORE/tele
+     ```
+
+  2. **Instalasi dependensi**:
+     Pastikan Anda memiliki Node.js dan npm terinstal. Kemudian jalankan:
+     ```bash
+     npm install
+     ```
+
+  3. **Konfigurasi**:
+     Salin file `.env.example` menjadi `.env` dan isi dengan informasi yang diperlukan seperti `BOT_TOKEN`, `ADMIN_ID`, `LOGGING_GROUP_ID`, dll.
+
+  4. **Menjalankan Bot**:
+     Jalankan perintah berikut untuk memulai bot:
+     ```bash
+     node app.js
+     ```
+</details>
 
 ## Penggunaan
 
