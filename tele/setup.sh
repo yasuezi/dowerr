@@ -50,4 +50,12 @@ EOF
 echo "✅ File .env berhasil dibuat dan diisi."
 
 echo "🚀 Menjalankan aplikasi..."
+echo "Coba /start di bot telegram"
+echo "kalo dah jalan ctrl+c untuk exit"
+echo "terus install pm2 untuk service"
+echo "npm install -g pm2"
+echo "pm2 start app.js name bot"
+echo "pm2 startup  "
+echo "pm2 save"
+echo "selesai"
 npm start
