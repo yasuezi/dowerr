@@ -1,3 +1,9 @@
+/**
+ * Dibuat oleh Autoftbot pada 19 April 2025
+ * Dilarang keras untuk diperjualbelikan.
+ * Kalau mau ubah atau modifikasi, silakan fork saja proyeknya.
+ */
+
 const { Telegraf } = require('telegraf');
 const fs = require('fs');
 const path = require('path');
