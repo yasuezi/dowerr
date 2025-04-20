@@ -26,7 +26,7 @@ const CONFIG = {
     qrisConfig: {
         merchantId: process.env.QRIS_MERCHANT_ID,
         apiKey: process.env.QRIS_API_KEY,
-        basePrice: 7500,
+        basePrice: process.env.BASE_PRICE,
         baseQrString: process.env.QRIS_BASE_QR_STRING,
         logoPath: path.join(__dirname, 'logo.png')
     },
