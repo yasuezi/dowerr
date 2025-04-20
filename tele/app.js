@@ -73,7 +73,8 @@ const unverifiedMenu = {
 const verifiedMenu = {
     reply_markup: {
         inline_keyboard: [
-            [{ text: '🚀 Mulai DOR', callback_data: 'start_dor' }]
+            [{ text: '🚀 Mulai DOR', callback_data: 'start_dor' }],
+            [{ text: '🗑️ Hapus OTP', callback_data: 'hapus_otp' }]
         ]
     }
 };
@@ -112,6 +113,8 @@ const messageTemplates = {
 │
 ├─〔 MENU 〕─────────────────
 │ ${isVerified ? '🚀 Mulai DOR' : '📱 Minta OTP'}
+│
+│ Jika Otp Tidak Masuk Coba lagi dengan request ulang
 │
 ├─〔 PERHATIAN 〕────────────
 │ ⚠️ Hindari semua jenis kuota XTRA COMBO sebelum order:
@@ -605,6 +608,9 @@ bot.action('confirm_dor', async (ctx) => {
             }
         );
 
+        // Track the QR code message
+        messageTracker[userId] = qrMessage.message_id;
+
         const paymentData = {
             reference,
             amount: totalAmount,
@@ -745,6 +751,36 @@ function calculateCRC16(str) {
     }
     return (crc & 0xFFFF).toString(16).toUpperCase().padStart(4, '0');
 }
+
+bot.action('hapus_otp', async (ctx) => {
+    try {
+        const userData = loadUserData();
+        const userId = ctx.from.id;
+        
+        if (!userData[userId]) {
+            await sendMessage(ctx, messageTemplates.error('Anda belum memiliki data OTP untuk dihapus.'), unverifiedMenu);
+            return;
+        }
+
+        // Hapus data OTP dan verifikasi
+        delete userData[userId].phoneNumber;
+        delete userData[userId].verified;
+        delete userData[userId].accessToken;
+        delete userData[userId].otpData;
+        saveUserData(userData);
+
+        await sendMessage(ctx, `
+╭─〔 OTP DIHAPUS 〕──────────╮
+│ ✅ Data OTP berhasil dihapus
+│
+├─〔 PETUNJUK 〕─────────────
+│ 1. Klik "Minta OTP"
+│ 2. Masukkan nomor baru
+╰────────────────────────────╯`, unverifiedMenu);
+    } catch (error) {
+        await sendMessage(ctx, messageTemplates.error('Gagal menghapus data OTP. Silakan coba lagi.'), unverifiedMenu);
+    }
+});
 
 bot.catch((err, ctx) => {
     console.error('Error:', err);
