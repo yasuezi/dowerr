@@ -135,7 +135,7 @@ function deleteUserOtpData(phoneNumber) {
 
 const DOR_CONFIG = {
     apiUrl: 'https://api.tuyull.my.id/api/v1/dor',
-    apiKey: '#', //MINTA SAMA RizkyHdyt
+    apiKey: '0a1ccba4-e6fc-498c-af2f-5f889c765aaa', //MINTA SAMA RizkyHdyt
     price: 6000 //BEBAS BERAPA TERGANTUNG ANDA
 }
 
@@ -152,7 +152,7 @@ const TRIPAY_CONFIG = {
 
 const bot = new Client({
     prefix: ".",
-    phoneNumber: "68123456789", /PAKAI NOMOR WA YANG MAU DI JADIKAN BOT
+    phoneNumber: "6287849812718", /PAKAI NOMOR WA YANG MAU DI JADIKAN BOT
     usePairingCode: true,
     printQRInTerminal: false,
     WAVersion: [2, 3000, 1015901307],
