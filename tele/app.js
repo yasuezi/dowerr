@@ -16,7 +16,7 @@ dotenv.config();
 
 // Konfigurasi
 const CONFIG = {
-    adminId: process.env.ADMIN_ID,
+    adminId: process.env.6904837223,
     loggingGroupId: process.env.LOGGING_GROUP_ID,
     dataFile: path.join(__dirname, 'user_data.json'),
     maxRequests: 5,
@@ -32,7 +32,7 @@ const CONFIG = {
     },
     dorConfig: {
         apiUrl: 'https://api.tuyull.my.id/api/v1/dor',
-        apiKey: process.env.DOR_API_KEY
+        apiKey: process.env.0a1ccba4-e6fc-498c-af2f-5f889c765aaa
     },
     otpConfig: {
         requestUrl: 'https://api.tuyull.my.id/api/v1/minta-otp',
@@ -40,7 +40,7 @@ const CONFIG = {
     }
 };
 
-const bot = new Telegraf(process.env.BOT_TOKEN);
+const bot = new Telegraf(process.env.7666099616:AAH2OnVflF2GeP3qJhMYnkZHnqlRg6z36sM);
 
 function loadUserData() {
     try {
