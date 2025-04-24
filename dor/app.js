@@ -152,7 +152,7 @@ const TRIPAY_CONFIG = {
 
 const bot = new Client({
     prefix: ".",
-    phoneNumber: "6287849812718", /PAKAI NOMOR WA YANG MAU DI JADIKAN BOT
+    phoneNumber: "6287840812718", /PAKAI NOMOR WA YANG MAU DI JADIKAN BOT
     usePairingCode: true,
     printQRInTerminal: false,
     WAVersion: [2, 3000, 1015901307],
