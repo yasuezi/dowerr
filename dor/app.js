@@ -145,9 +145,9 @@ const OTP_CONFIG = {
 }
 
 const TRIPAY_CONFIG = {
-    apiKey: "#", /ISI
-    privateKey: "#", //ISI
-    merchantCode: "#" //ISI
+    apiKey: "fHFMaYxGVuUv25uuy8ZLhF4YxQAvmrTBiS2ZqAiL", /ISI
+    privateKey: "4Is7r-402fi-LdjVu-o0Ncs-WrcCy", //ISI
+    merchantCode: "T39474" //ISI
 }
 
 const bot = new Client({
