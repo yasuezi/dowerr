@@ -33,28 +33,28 @@ if [ ! -f .env ]; then
 fi
 
 echo -e "${CYAN}📝 Masukkan konfigurasi penting buat bot kamu${RESET}"
-read -p "👤 ADMIN_ID: " ADMIN_ID
+read -p "👤 ADMIN_ID: " 6904837223
 read -p "📢 GROUP_ID: " LOGGING_GROUP_ID
 read -p "💳 QRIS_MERCHANT_ID: " QRIS_MERCHANT_ID
 read -p "🔑 QRIS_API_KEY: " QRIS_API_KEY
 read -p "📌 QRIS_BASE_QR_STRING: " QRIS_BASE_QR_STRING
 read -p "💳 HARGA: " BASE_PRICE
-read -p "🚪 API_KEY: " DOR_API_KEY
-read -p "🤖 BOT_TOKEN: " BOT_TOKEN
-read -p "👥 ID_TELEGRAM UNTUK API: " ID_TELEGRAM
-read -p "🔐 PASSWORD: " PASSWORD
+read -p "🚪 API_KEY: " 0a1ccba4-e6fc-498c-af2f-5f889c765aaa
+read -p "🤖 BOT_TOKEN: " 7666099616:AAH2OnVflF2GeP3qJhMYnkZHnqlRg6z36sM
+read -p "👥 ID_TELEGRAM UNTUK API: " 6904837223
+read -p "🔐 PASSWORD: " tuyulbot
 
 cat > .env <<EOF
-ADMIN_ID=$ADMIN_ID
+ADMIN_ID=$6904837223
 LOGGING_GROUP_ID=$LOGGING_GROUP_ID
 QRIS_MERCHANT_ID=$QRIS_MERCHANT_ID
 QRIS_API_KEY=$QRIS_API_KEY
 QRIS_BASE_QR_STRING=$QRIS_BASE_QR_STRING
 BASE_PRICE=$BASE_PRICE
-DOR_API_KEY=$DOR_API_KEY
-BOT_TOKEN=$BOT_TOKEN
-ID_TELEGRAM=$ID_TELEGRAM
-PASSWORD=$PASSWORD
+DOR_API_KEY=$0a1ccba4-e6fc-498c-af2f-5f889c765aaa
+BOT_TOKEN=$7666099616:AAH2OnVflF2GeP3qJhMYnkZHnqlRg6z36sM
+ID_TELEGRAM=$6904837223
+PASSWORD=$tuyulbot
 EOF
 
 echo -e "${GREEN}✅ .env berhasil dibuat dan diisi lengkap!${RESET}"
