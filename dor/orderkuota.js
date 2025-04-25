@@ -54,7 +54,7 @@ const VALIDATION_CONFIG = {
 };
 
 const ADMIN_CONFIG = {
-    adminNumbers: ['628136852639'], // Nomor admin yang diizinkan
+    adminNumbers: ['628811626713'], // Nomor admin yang diizinkan
     maintenanceMode: false
 };
 
@@ -276,7 +276,7 @@ const OTP_CONFIG = {
 
 const bot = new Client({
     prefix: ".",
-    phoneNumber: "6287840812718",
+    phoneNumber: "6281916765366",
     usePairingCode: true,
     printQRInTerminal: false,
     WAVersion: [2, 3000, 1015901307],
