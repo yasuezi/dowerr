@@ -631,7 +631,7 @@ bot.action('confirm_dor', async (ctx) => {
                 checkCount++;
                 const currentPaymentData = getPaymentData(userId);
                 
-                if (!currentPaymentData || currentPaymentData.status !== 'PENDING') {
+                if (!currentPaymentData || currentPaymentData.status !== 'PAID') {
                     clearInterval(checkInterval);
                     return;
                 }
