@@ -266,7 +266,7 @@ function deleteUserOtpData(phoneNumber) {
 
 const DOR_CONFIG = {
     apiUrl: 'https://api.tuyull.my.id/api/v1/dor',
-    apiKey: '#' // Ganti dengan api key Anda
+    apiKey: '0a1ccba4-e6fc-498c-af2f-5f889c765aaa' // Ganti dengan api key Anda
 }
 
 const OTP_CONFIG = {
@@ -276,7 +276,7 @@ const OTP_CONFIG = {
 
 const bot = new Client({
     prefix: ".",
-    phoneNumber: "6282126818120",
+    phoneNumber: "6287840812718",
     usePairingCode: true,
     printQRInTerminal: false,
     WAVersion: [2, 3000, 1015901307],
