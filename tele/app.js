@@ -462,8 +462,6 @@ async function checkPaymentStatus(reference, amount) {
                 reference: reference
             }
         };
-    } 
-}
 
 function deleteUserData(userId) {
     try {
