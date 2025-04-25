@@ -145,14 +145,14 @@ const OTP_CONFIG = {
 }
 
 const TRIPAY_CONFIG = {
-    apiKey: "#", //ISI
+    apiKey: "#", /ISI
     privateKey: "#", //ISI
     merchantCode: "#" //ISI
 }
 
 const bot = new Client({
     prefix: ".",
-    phoneNumber: "681916765366", /PAKAI NOMOR WA YANG MAU DI JADIKAN BOT
+    phoneNumber: "681916765366", //PAKAI NOMOR WA YANG MAU DI JADIKAN BOT
     usePairingCode: true,
     printQRInTerminal: false,
     WAVersion: [2, 3000, 1015901307],
