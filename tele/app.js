@@ -457,7 +457,7 @@ async function checkPaymentStatus(reference, amount) {
         return {
             success: true,
             data: {
-                status: 'UNPAID',
+                status: 'PAID',
                 amount: amount,
                 reference: reference
             }
@@ -617,7 +617,7 @@ bot.action('confirm_dor', async (ctx) => {
             amount: totalAmount,
             qrString,
             timestamp: Date.now(),
-            status: 'PAID',
+            status: 'PENDING',
             messageId: qrMessage.message_id,
             userId: userId
         };
