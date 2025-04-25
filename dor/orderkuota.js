@@ -12,9 +12,9 @@ const QRISPayment = require('qris-payment');
 const fs = require('fs');
 
 const config = {
-    merchantId: 'YOUR_MERCHANT_ID',
-    apiKey: 'YOUR_API_KEY',
-    baseQrString: 'YOUR_BASE_QR_STRING',
+    merchantId: 'OK924370',
+    apiKey: '63748271745564351924370OKCT4FE1C28580CACFD63EDF14E265CE0218',
+    baseQrString: '00020101021126670016COM.NOBUBANK.WWW01189360050300000879140214131379338056960303UMI51440014ID.CO.QRIS.WWW0215ID20232438786910303UMI5204511153033605802ID5910VPN STORES6006JEMBER61056811162070703A016304EEB8',
     logoPath: 'path/to/logo.png'
 };
 
@@ -54,7 +54,7 @@ const VALIDATION_CONFIG = {
 };
 
 const ADMIN_CONFIG = {
-    adminNumbers: ['6281936852639'], // Nomor admin yang diizinkan
+    adminNumbers: ['628136852639'], // Nomor admin yang diizinkan
     maintenanceMode: false
 };
 
