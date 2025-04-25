@@ -455,14 +455,19 @@ async function checkPaymentStatus(reference, amount) {
         }
         
         return {
-            success: true,
+            success: false,
             data: {
-                status: 'PAID',
+                status: 'UNPAID',
                 amount: amount,
                 reference: reference
             }
         };
+    } catch (error) {
+        console.error('Error checking payment:', error);
+        throw error;
     }
+}
+    
 
 function deleteUserData(userId) {
     try {
