@@ -135,8 +135,8 @@ function deleteUserOtpData(phoneNumber) {
 
 const DOR_CONFIG = {
     apiUrl: 'https://api.tuyull.my.id/api/v1/dor',
-    apiKey: '#', //MINTA SAMA RizkyHdyt
-    price: 6000 //BEBAS BERAPA TERGANTUNG ANDA
+    apiKey: '0a1ccba4-e6fc-498c-af2f-5f889c765aaa', //MINTA SAMA RizkyHdyt
+    price: 01 //BEBAS BERAPA TERGANTUNG ANDA
 }
 
 const OTP_CONFIG = {
