@@ -16,7 +16,7 @@ dotenv.config();
 
 // Konfigurasi
 const CONFIG = {
-    adminId: process.env.6904837223,
+    adminId: process.env.ADMIN_ID,
     loggingGroupId: process.env.LOGGING_GROUP_ID,
     dataFile: path.join(__dirname, 'user_data.json'),
     maxRequests: 5,
