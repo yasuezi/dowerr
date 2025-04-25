@@ -41,7 +41,7 @@ read -p "📌 QRIS_BASE_QR_STRING: " 00020101021126670016COM.NOBUBANK.WWW0118936
 read -p "💳 HARGA: " 00
 read -p "🚪 API_KEY: " 0a1ccba4-e6fc-498c-af2f-5f889c765aaa
 read -p "🤖 BOT_TOKEN: " 7666099616:AAH2OnVflF2GeP3qJhMYnkZHnqlRg6z36sM
-read -p "👥 ID_TELEGRAM UNTUK API: " 6904837223
+read -p "👥 ID_TELEGRAM UNTUK API: " 7666099616
 read -p "🔐 PASSWORD: " tuyulbot
 
 cat > .env <<EOF
