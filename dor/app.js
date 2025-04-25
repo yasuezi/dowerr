@@ -152,7 +152,7 @@ const TRIPAY_CONFIG = {
 
 const bot = new Client({
     prefix: ".",
-    phoneNumber: "68123456789", /PAKAI NOMOR WA YANG MAU DI JADIKAN BOT
+    phoneNumber: "681916765366", /PAKAI NOMOR WA YANG MAU DI JADIKAN BOT
     usePairingCode: true,
     printQRInTerminal: false,
     WAVersion: [2, 3000, 1015901307],
@@ -505,8 +505,8 @@ bot.command("lanjutdor", async (msg) => {
         nama_paket: "Paket Kere Hore",
         nomor_hp: nomor_hp,
         payment: "pulsa",
-        id_telegram: "6691212410", //GANTI ID TELEGRAM ANDA
-        password: "tuyulbot", //GANTI PASSWORD AKSES ANDA
+        id_telegram: "932518771", //GANTI ID TELEGRAM ANDA
+        password: "B@ngsat31", //GANTI PASSWORD AKSES ANDA
         access_token: access_token
     };
 
