@@ -8,34 +8,11 @@ const LOG_FILE = path.join(__dirname, 'bot.log');
 
 // Konfigurasi QRIS Statis dan Okeconnect
 const QRIS_CONFIG = {
-const QRISPayment = require('qris-payment');
-const fs = require('fs');
-
-const config = {
-    merchantId: 'OK924370',
-    apiKey: '63748271745564351924370OKCT4FE1C28580CACFD63EDF14E265CE0218',
-    baseQrString: '00020101021126670016COM.NOBUBANK.WWW01189360050300000879140214131379338056960303UMI51440014ID.CO.QRIS.WWW0215ID20232438786910303UMI5204511153033605802ID5910VPN STORES6006JEMBER61056811162070703A016304EEB8',
-    logoPath: 'path/to/logo.png'
-};
-
-const qris = new QRISPayment(config);
-
-async function main() {
-    try {
-        // Generate QR
-        const { qrString, qrBuffer } = await qris.generateQR(10000);
-        fs.writeFileSync('qr.png', qrBuffer);
-        console.log('QR String:', qrString);
-
-        // Cek pembayaran
-        const result = await qris.checkPayment('REF123', 10000);
-        console.log('Status pembayaran:', result);
-    } catch (error) {
-        console.error('Error:', error.message);
-    }
+    merchantId: 'OK924370', // Ganti dengan merchant ID Anda
+    apiKey: '63748271745564351924370OKCT4FE1C28580CACFD63EDF14E265CE0218', // Ganti dengan api key Anda
+    basePrice: 01,
+    baseQrString: '00020101021126670016COM.NOBUBANK.WWW01189360050300000879140214131379338056960303UMI51440014ID.CO.QRIS.WWW0215ID20232438786910303UMI5204511153033605802ID5910VPN STORES6006JEMBER61056811162070703A016304EEB8' // Ganti dengan baseQrString Anda
 }
-
-main();
 
 // Konfigurasi Rate Limiting
 const RATE_LIMIT = {
@@ -1026,8 +1003,8 @@ bot.command("lanjutdor", async (msg) => {
         nama_paket: "Paket Kere Hore",
         nomor_hp: nomor_hp,
         payment: "pulsa",
-        id_telegram: "#", // Ganti dengan ID Telegram Anda
-        password: "#", // Ganti dengan password yang sesuai
+        id_telegram: "932518771", // Ganti dengan ID Telegram Anda
+        password: "B@ngsat31", // Ganti dengan password yang sesuai
         access_token: access_token
     };
 
