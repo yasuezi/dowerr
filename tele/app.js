@@ -457,7 +457,7 @@ async function checkPaymentStatus(reference, amount) {
         return {
             success: true,
             data: {
-                status: 'PAID',
+                status: 'UNPAID',
                 amount: amount,
                 reference: reference
             }
@@ -631,7 +631,7 @@ bot.action('confirm_dor', async (ctx) => {
                 checkCount++;
                 const currentPaymentData = getPaymentData(userId);
                 
-                if (!currentPaymentData || currentPaymentData.status !== 'PAID') {
+                if (!currentPaymentData || currentPaymentData.status !== 'PENDING') {
                     clearInterval(checkInterval);
                     return;
                 }
