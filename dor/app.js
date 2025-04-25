@@ -145,7 +145,7 @@ const OTP_CONFIG = {
 }
 
 const TRIPAY_CONFIG = {
-    apiKey: "#", /ISI
+    apiKey: "#", //ISI
     privateKey: "#", //ISI
     merchantCode: "#" //ISI
 }
