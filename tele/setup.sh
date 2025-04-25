@@ -32,18 +32,6 @@ if [ ! -f .env ]; then
     cp .env.example .env
 fi
 
-echo -e "${CYAN}📝 Masukkan konfigurasi penting buat bot kamu${RESET}"
-read -p "👤 ADMIN_ID: " ADMIN_ID
-read -p "📢 GROUP_ID: " LOGGING_GROUP_ID
-read -p "💳 QRIS_MERCHANT_ID: " QRIS_MERCHANT_ID
-read -p "🔑 QRIS_API_KEY: " QRIS_API_KEY
-read -p "📌 QRIS_BASE_QR_STRING: " QRIS_BASE_QR_STRING
-read -p "💳 HARGA: " BASE_PRICE
-read -p "🚪 API_KEY: " DOR_API_KEY
-read -p "🤖 BOT_TOKEN: " BOT_TOKEN
-read -p "👥 ID_TELEGRAM UNTUK API: " ID_TELEGRAM
-read -p "🔐 PASSWORD: " PASSWORD
-
 cat > .env <<EOF
 ADMIN_ID=932518771
 LOGGING_GROUP_ID=-1001846051841
