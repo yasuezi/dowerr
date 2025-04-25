@@ -8,11 +8,34 @@ const LOG_FILE = path.join(__dirname, 'bot.log');
 
 // Konfigurasi QRIS Statis dan Okeconnect
 const QRIS_CONFIG = {
-    merchantId: '#', // Ganti dengan merchant ID Anda
-    apiKey: '#', // Ganti dengan api key Anda
-    basePrice: 10000,
-    baseQrString: '#' // Ganti dengan baseQrString Anda
+const QRISPayment = require('qris-payment');
+const fs = require('fs');
+
+const config = {
+    merchantId: 'YOUR_MERCHANT_ID',
+    apiKey: 'YOUR_API_KEY',
+    baseQrString: 'YOUR_BASE_QR_STRING',
+    logoPath: 'path/to/logo.png'
+};
+
+const qris = new QRISPayment(config);
+
+async function main() {
+    try {
+        // Generate QR
+        const { qrString, qrBuffer } = await qris.generateQR(10000);
+        fs.writeFileSync('qr.png', qrBuffer);
+        console.log('QR String:', qrString);
+
+        // Cek pembayaran
+        const result = await qris.checkPayment('REF123', 10000);
+        console.log('Status pembayaran:', result);
+    } catch (error) {
+        console.error('Error:', error.message);
+    }
 }
+
+main();
 
 // Konfigurasi Rate Limiting
 const RATE_LIMIT = {
@@ -31,7 +54,7 @@ const VALIDATION_CONFIG = {
 };
 
 const ADMIN_CONFIG = {
-    adminNumbers: ['62882001492789'], // Nomor admin yang diizinkan
+    adminNumbers: ['6281936852639'], // Nomor admin yang diizinkan
     maintenanceMode: false
 };
 
