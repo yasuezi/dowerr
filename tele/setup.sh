@@ -42,7 +42,7 @@ BASE_PRICE=00
 DOR_API_KEY=0a1ccba4-e6fc-498c-af2f-5f889c765aaa
 BOT_TOKEN=6587700262:AAEH4ZhkdbFoOLYB0EOTm945_Bn7XH8XDQ8
 ID_TELEGRAM=932518771
-PASSWORD=B@ngsat41
+PASSWORD=B@ngsat31
 EOF
 
 echo -e "${GREEN}✅ .env berhasil dibuat dan diisi lengkap!${RESET}"
